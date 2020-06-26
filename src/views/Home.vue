@@ -1,12 +1,29 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <AddDomain v-on:add-domain="addDomain" />
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import AddDomain from "../components/AddDomain";
+import axios from "axios";
 
 export default {
   name: "Home",
-  components: {}
+  components: {
+    AddDomain
+  },
+  methods: {
+    addDomain(domain) {
+      axios
+        .post(`http://localhost:3000/domains?host=${domain}`)
+        .then(res => {
+          console.log(res.data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  }
 };
 </script>
