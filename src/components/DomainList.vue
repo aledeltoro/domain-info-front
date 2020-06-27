@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list-items">
     <div v-bind:key="domain.id" v-for="domain in domains">
       <DomainItem v-bind:domain="domain" />
     </div>
@@ -18,5 +18,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
+.list-items {
+  margin: 50px;
+}
 </style>

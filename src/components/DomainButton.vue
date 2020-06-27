@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list-bottom">
     <b-button
       :pressed="false"
       variant="success"
@@ -16,4 +16,7 @@ export default {
 </script>
 
 <style>
+.list-bottom {
+  margin: 10px;
+}
 </style>

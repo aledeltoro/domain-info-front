@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid="true">
+  <b-container>
     <b-form @submit="addDomain" v-if="show">
       <b-form-group
         id="input-group-1"
@@ -36,7 +36,6 @@ export default {
     addDomain(e) {
       e.preventDefault();
       this.$emit("add-domain", this.form.domain);
-      alert(JSON.stringify(this.form));
       this.form.domain = "";
     }
   }

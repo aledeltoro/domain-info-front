@@ -1,16 +1,14 @@
 <template>
-  <b-container fluid="true">
-    <b-navbar type="dark" variant="primary">
-      <b-navbar-brand>Domain Info</b-navbar-brand>
+  <b-navbar type="dark" variant="primary">
+    <b-navbar-brand>Domain Info</b-navbar-brand>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-navbar-nav justified="true">
-        <b-nav-item to="/">Home</b-nav-item>
-        <b-nav-item @click="getDomains" to="/domains">Domains</b-nav-item>
-      </b-navbar-nav>
-    </b-navbar>
-  </b-container>
+    <b-navbar-nav justified="true">
+      <b-nav-item to="/">Home</b-nav-item>
+      <b-nav-item @click="getDomains" to="/domains">Domains</b-nav-item>
+    </b-navbar-nav>
+  </b-navbar>
 </template>
 
 <script>

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <b-container fluid>
     <DomainButton v-on:get-domains="getDomains" />
     <DomainList v-bind:domains="domains" />
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -23,6 +23,7 @@ export default {
   },
   methods: {
     getDomains() {
+      this.domains = [];
       axios
         .get("http://localhost:3000/domains")
         .then(res => {
@@ -31,7 +32,7 @@ export default {
           });
         })
         .catch(err => {
-          console.log(err);
+          alert(err);
         });
     }
   }
