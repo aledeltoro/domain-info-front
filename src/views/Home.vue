@@ -1,20 +1,20 @@
 <template>
   <div class="home">
     <AddDomain v-on:add-domain="addDomain" />
-    <DomainItem v-bind:domain="newDomain" />
+    <HostItem v-bind:host="newHost" />
   </div>
 </template>
 
 <script>
 import AddDomain from "../components/AddDomain";
-import DomainItem from "../components/DomainItem";
+import HostItem from "../components/HostItem";
 import axios from "axios";
 
 export default {
   name: "Home",
   components: {
     AddDomain,
-    DomainItem
+    HostItem
   },
   data() {
     return {
@@ -27,10 +27,12 @@ export default {
         .post(`http://localhost:3000/domains?host=${domain}`)
         .then(res => {
           this.newHost = res.data;
-          console.log(res.data);
+          console.log(res.status);
         })
         .catch(err => {
-          alert(err);
+          if (err.response) {
+            alert(err.response.data);
+          }
         });
     }
   }

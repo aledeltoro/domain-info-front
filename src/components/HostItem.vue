@@ -1,55 +1,56 @@
 <template>
-  <div>
+  <b-container class="host-item">
     <b-row align-content="center">
-      <b-col>
+      <b-col sm="4">
         <b-card
           align="left"
-          :header="domain.domainName"
-          :img-src="domain.hostInfo.logo"
-          img-height="auto"
+          :header="host.title"
+          :img-src="host.logo"
+          img-height="25%"
           img-top
           tag="domain"
           style="max-width: 18rem;"
           class="mb-2"
         >
-          <b-card-body>{{domain.hostInfo.title}}</b-card-body>
-
           <b-list-group flush>
             <b-list-group-item>
               <strong>SERVERS CHANGED:</strong>
-              {{domain.hostInfo.servers_changed}}
+              {{host.servers_changed}}
             </b-list-group-item>
 
             <b-list-group-item>
               <strong>SSL GRADE:</strong>
-              {{domain.hostInfo.ssl_grade}}
+              {{host.ssl_grade}}
             </b-list-group-item>
 
             <b-list-group-item>
               <strong>PREVIOUS SSL GRADE:</strong>
-              {{domain.hostInfo.previous_ssl_grade}}
+              {{host.previous_ssl_grade}}
             </b-list-group-item>
 
             <b-list-group-item>
               <strong>DOMAIN DOWN:</strong>
-              {{domain.hostInfo.is_down}}
+              {{host.is_down}}
             </b-list-group-item>
           </b-list-group>
         </b-card>
       </b-col>
       <b-col>
-        <b-table striped hover :items="domain.hostInfo.servers"></b-table>
+        <b-table striped hover :items="host.servers"></b-table>
       </b-col>
     </b-row>
-  </div>
+  </b-container>
 </template>
 
 <script>
 export default {
-  name: "DomainItem",
-  props: ["domain"]
+  name: "HostItem",
+  props: ["host"]
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.host-item {
+  margin: 20px auto;
+}
 </style>
