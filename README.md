@@ -28,10 +28,12 @@ Once you have installed Node.js, follow these instructions to install the projec
 	npm install
 	```
 
-* Compiles and hot-reloads for development
-	```
-	npm run serve
-	```
+## Usage
+
+Once you have set up the project, run this command to compile the project and hot-reloads for development: 
+```
+npm run serve
+```
 
 ## Built With 
 
