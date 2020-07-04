@@ -1,24 +1,43 @@
-# domain-info-front
+# Domain Info Frontend
 
-## Project setup
-```
-npm install
-```
+Web client for a service that would allow us to retrieve information about a domain and know if the settings have changed.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Getting Started
 
-### Compiles and minifies for production
-```
-npm run build
-```
+These instructions will get you a copy of the project up and running on your local machine. 
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Prerequisites
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Node.js
+
+Enter the [official webpage](https://nodejs.org) to install Node.js and NPM. 
+
+### Installing
+
+Once you have installed Node.js, follow these instructions to install the project. 
+
+* Clone the project: 
+
+	```
+	git clone https://github.com/aledeltoro/domain-info-front.git
+	```
+
+* Project setup
+
+	```
+	npm install
+	```
+
+* Compiles and hot-reloads for development
+	```
+	npm run serve
+	```
+
+## Built With 
+
+* [Vue-router](https://github.com/vuejs/vue-router) - Official router for Vue.js
+* [Bootstrap-vue](https://github.com/bootstrap-vue/bootstrap-vue) - Plugin to build responsive sites using Vue.js
+
+## License
+
+MIT.
