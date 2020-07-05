@@ -1,40 +1,16 @@
 <template>
   <b-container fluid>
-    <DomainButton v-on:get-domains="getDomains" />
-    <DomainList v-bind:domains="domains" />
+    <ListDomain />
   </b-container>
 </template>
 
 <script>
-import DomainList from "../components/DomainList";
-import DomainButton from "../components/DomainButton";
-import axios from "axios";
+import ListDomain from "../components/ListDomain";
 
 export default {
   name: "Domain",
   components: {
-    DomainList,
-    DomainButton
-  },
-  data() {
-    return {
-      domains: []
-    };
-  },
-  methods: {
-    getDomains() {
-      this.domains = [];
-      axios
-        .get("http://localhost:3000/domains")
-        .then(res => {
-          res.data.items.forEach(item => {
-            this.domains.push(item);
-          });
-        })
-        .catch(err => {
-          alert(err);
-        });
-    }
+    ListDomain
   }
 };
 </script>
