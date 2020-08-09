@@ -6,9 +6,7 @@
     <DisclaimerCard v-else-if="state == 'iddle'" />
     <LoadingAnimation v-else />
 
-    <div v-if="showError">
-      <ErrorModal v-bind:error="error" />
-    </div>
+    <ErrorModal v-bind:error="error" />
   </div>
 </template>
 
@@ -27,7 +25,7 @@ export default {
     AddDomain,
     DisclaimerCard,
     LoadingAnimation,
-    ErrorModal
+    ErrorModal,
   },
   data() {
     return {
@@ -35,9 +33,9 @@ export default {
       state: "iddle",
       error: {
         title: "",
-        message: ""
+        message: "",
+        show: false,
       },
-      showError: true
     };
   },
   methods: {
@@ -46,11 +44,11 @@ export default {
 
       axios
         .post(`http://localhost:3000/domains?host=${domain}`)
-        .then(res => {
+        .then((res) => {
           this.newHost = res.data;
           this.state = "ready";
         })
-        .catch(err => {
+        .catch((err) => {
           switch (err.response.status) {
             case 400:
               this.error.title = "Client Error";
@@ -71,11 +69,11 @@ export default {
               break;
           }
 
-          this.showError = true;
+          this.error.show = true;
           this.state = "iddle";
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
